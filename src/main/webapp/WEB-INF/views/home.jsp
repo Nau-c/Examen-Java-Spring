@@ -89,21 +89,14 @@
 			<div class="item">
 				<p>
 					<span>Alumnado del centro:</span> Para añadir un nuevo alumno, haga
-					clic aquí: <input type="button" id="showForm" onclick="showForm()" value="Nuevo Alumno"/>
+					clic aquí: <input type="button" id="showForm" value="Nuevo Alumno"/>
 				</p>
-				<!-- 2.2 a) <!--
-				<!--<form id="newStudentForm" style="display:none;">
-  					<label for="name">Nombre:</label><br>
-  					<input type="text" id="name" name="name"><br>
-  					<label for="apellidos">Apellidos:</label><br>
-  					<input type="text" id="apellidos" name="apellidos"><br>
-  					<label for="age">Edad:</label><br>
-  					<input type="number" id="age" name="age"><br>
-  					<input type="submit" onclick="showMessage()" id="add-button" value="Añadir">
-  			
-				</form> !-->
-						
+			</div>
+			<div id="formulario">
 			
+			</div>
+			
+			<div id="newStudentForm">
 			</div>
 
 		</div>

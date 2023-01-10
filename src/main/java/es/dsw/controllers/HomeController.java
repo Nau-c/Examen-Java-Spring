@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,6 +35,12 @@ public class HomeController {
 	    return "home";
 	  }
 	  
+	  @GetMapping(value = {"/formulario"})
+		public String showFormulario() {
+			
+			return "formulario";
+		}
+	  
 	  /*
 	   Recibir los datos por post y chequearlos
 	   */
@@ -45,10 +52,10 @@ public class HomeController {
 		/*Alumno nuevoAlumno = new Alumno(nombre, apellidos, edad);
 		List<Alumno> alumnos = (List<Alumno>) objModel.getAttribute("alumnos");
 		*/
-		Alumno nuevoAlumno = new Alumno(apellidos, apellidos, edad);
-		nuevoAlumno.setNombre(nombre);
+		Alumno nuevoAlumno = new Alumno(nombre, apellidos, edad);
+		/*nuevoAlumno.setNombre(nombre);
 		nuevoAlumno.setApellidos(apellidos);
-		nuevoAlumno.setEdad(edad);
+		nuevoAlumno.setEdad(edad);*/
 		  
 		  
 		/*if (alumnos == null) {
@@ -78,14 +85,23 @@ public class HomeController {
 		
 	  	
 	  	
-	  	if ((nombre == "") || (apellidos == "") || (edad < 17)) {
+	  	if ((nombre == "") || (apellidos == "")) {
 	  		objModel.addAttribute("error", true);
+	  		objModel.addAttribute("errorVacio", true);
 	  	} else {
-	  		objModel.addAttribute("error", false);
+	  		objModel.addAttribute("errorVacio", false);
 	  	}
 	  	
+	  	if (edad < 17) {
+	  		objModel.addAttribute("error", true);
+	  		objModel.addAttribute("errorEdad", true);
+	  	} else {
+	  		objModel.addAttribute("errorEdad", false);
+	  	}
+	  	
+	 
 	  
-	  	return "home";
+	  	return "datoFormulario";
 	  }
 
 	  

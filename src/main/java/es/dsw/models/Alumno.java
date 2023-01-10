@@ -6,6 +6,9 @@ public class Alumno {
 	public String apellidos;
 	public int edad;
 	
+	
+	
+	
 	public Alumno(String nombre, String apellidos, int edad) {
 		super();
 		this.nombre = nombre;
@@ -13,6 +16,9 @@ public class Alumno {
 		this.edad = edad;
 		
 	}
+	
+	
+	
 	public String getNombre() {
 		return nombre;
 	}
